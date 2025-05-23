@@ -6,7 +6,7 @@ import { User } from './auth/user.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite', // In-memory mode using SQLite (acts like PostgreSQL for dev)
+      type: 'sqlite', 
       database: ':memory:',
       dropSchema: true,
       entities: [User],
