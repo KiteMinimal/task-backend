@@ -17,6 +17,11 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
+   app.enableCors({
+    origin: 'http://localhost:3001', // your frontend origin
+    credentials: true,
+  });
+
   // Use ConfigService to access PORT from .env
   const configService = app.get(ConfigService);
   const port = configService.get('DB_PORT');
